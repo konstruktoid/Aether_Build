@@ -19,3 +19,5 @@ $ docker run -d -t --privileged --net=host konstruktoid/x11
 $ docker build -t aether -f Dockerfile .
 $ docker run -ti --net=host -v /tmp/.X11-unix/:/tmp/.X11-unix/ -e DISPLAY=unix$DISPLAY aether
 ```
+
+![](https://raw.githubusercontent.com/konstruktoid/Aether_Build/master/x11_aether.png)
