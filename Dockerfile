@@ -1,5 +1,3 @@
-# Force autobuild 1439929931
-
 FROM konstruktoid/ubuntu:trusty
 
 ENV DL 'https://github.com/nehbit/aether-public/releases/download/v1.2.3-LNX-TAR/aether_1.2.3.tar.bz2'
