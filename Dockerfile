@@ -23,7 +23,6 @@ RUN \
 
 RUN \
     apt-get autoclean && \
-    apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/* \
     /usr/share/doc /usr/share/doc-base \
     /usr/share/man /usr/share/locale /usr/share/zoneinfo
