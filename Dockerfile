@@ -7,7 +7,8 @@ ENV HOME /home/$USER
 RUN \
     apt-get update && \
     apt-get -y upgrade && \
-    apt-get -y install bzip2 ca-certificates libc6 libgl1-mesa-dev wget --no-install-recommends
+    apt-get -y install bzip2 ca-certificates keyboard-configuration \
+        libc6 libgl1-mesa-dev libxfont1 wget xkb-data --no-install-recommends
 
 RUN \
     useradd --create-home --home-dir $HOME $USER && \
