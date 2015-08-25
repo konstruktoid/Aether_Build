@@ -21,7 +21,8 @@ RUN \
     rm /tmp/aether.tar.bz2
 
 RUN \
-    apt-get autoclean && \
+    apt-get clean && \
+    apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* \
     /usr/share/doc /usr/share/doc-base \
     /usr/share/man /usr/share/locale /usr/share/zoneinfo
