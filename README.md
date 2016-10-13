@@ -1,4 +1,7 @@
 # Aether
+
+[![](https://images.microbadger.com/badges/image/konstruktoid/aether.svg)](https://microbadger.com/images/konstruktoid/aether "Aether")
+
 "Aether is a free app that you use to read, write in, and create community 
 moderated, distributed, and anonymous forums, an “anonymous reddit without servers."  
 http://getaether.net/
