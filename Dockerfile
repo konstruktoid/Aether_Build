@@ -1,5 +1,8 @@
 FROM konstruktoid/ubuntu:trusty
 
+LABEL org.label-schema.name="aether"
+      org.label-schema.vcs-url="git://github.com/konstruktoid/Aether_Build.git"
+
 ENV DL 'https://github.com/nehbit/aether-public/releases/download/v1.2.3-LNX-TAR/aether_1.2.3.tar.bz2'
 ENV USER aether
 ENV HOME /home/$USER
