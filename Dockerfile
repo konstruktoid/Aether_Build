@@ -1,4 +1,4 @@
-FROM konstruktoid/ubuntu:trusty
+FROM konstruktoid/alpine
 
 LABEL org.label-schema.name="aether" \
       org.label-schema.vcs-url="git://github.com/konstruktoid/Aether_Build.git"
@@ -8,29 +8,23 @@ ENV USER aether
 ENV HOME /home/$USER
 
 RUN \
-    apt-get update && \
-    apt-get -y upgrade && \
-    apt-get -y install bzip2 ca-certificates keyboard-configuration \
-        libc6 libgl1-mesa-dev libxfont1 wget xkb-data --no-install-recommends
+    apk update && \
+    apk upgrade && \
+    rm -rf /var/cache/apk/*
 
 RUN \
-    useradd --create-home --home-dir $HOME $USER && \
+    adduser -D -h $HOME -s /bin/sh $USER && \
     mkdir -p $HOME/.config/autostart && \
     chown -R $USER:$USER $HOME
 
 RUN \
-    wget -O /tmp/aether.tar.bz2 $DL && \
-    tar -xjvf /tmp/aether.tar.bz2 -C /opt && \
+    echo "NOTE: This version of Aether (V1) is currently deprecated." && \
+    wget -qO /tmp/aether.tar.bz2 $DL && \
+    tar -xjvf /tmp/aether.tar.bz2 -C /usr/local/bin && \
     rm /tmp/aether.tar.bz2
-
-RUN \
-    apt-get clean && \
-    apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/* \
-    /usr/share/doc /usr/share/doc-base \
-    /usr/share/man /usr/share/locale /usr/share/zoneinfo
 
 WORKDIR $HOME
 USER aether
 
-CMD ["/opt/aether/Aether"]
+ENTRYPOINT ["/usr/local/bin/aether/Aether"]
+CMD [""]
