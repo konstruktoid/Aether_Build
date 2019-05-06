@@ -18,13 +18,14 @@ RUN \
     chown -R $USER:$USER $HOME
 
 RUN \
-    echo "NOTE: This version of Aether (V1) is currently deprecated." && \
-    wget -qO /tmp/aether.tar.bz2 $DL && \
-    tar -xjvf /tmp/aether.tar.bz2 -C /usr/local/bin && \
-    rm /tmp/aether.tar.bz2
+    echo -e "\n\n\n[!] NOTE: This version of Aether (V1) is deprecated." && \
+    echo -e "Waiting for a non-snap version. https://meta.getaether.net/t/any-other-way-to-install-it-on-linux-besides-snap/184\n\n\n"
+#    wget -qO /tmp/aether.tar.bz2 $DL && \
+#    tar -xjvf /tmp/aether.tar.bz2 -C /usr/local/bin && \
+#    rm /tmp/aether.tar.bz2
 
 WORKDIR $HOME
 USER aether
 
-ENTRYPOINT ["/usr/local/bin/aether/Aether"]
+# ENTRYPOINT ["/usr/local/bin/aether/Aether"]
 CMD [""]
